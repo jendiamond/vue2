@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  </head>
+    <div id='app'>
+      <body>
+        <h2>{{ getTitle() }}</h2>
+        <p>
+          {{ sayHello() }} - <a v-bind:href="link">Google</a>
+        </p>
+      </body>
+  </div>
+  <script src="main.js"></script>
+</html>
