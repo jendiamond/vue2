@@ -4,86 +4,112 @@
   <meta charset="UTF-8">
   <title></title>
     <script src='https://unpkg.com/vue/dist/vue.js'></script>
-    <style>
-      body {
-        background-color: #FBDB0C;
-        margin-top: 20px;
-      }
-      p {
-        font-family: Georgia, Times, serif;
-        color: #615E3F;
-        font-weight: bold;
-      }
-      h1 {
-        font-family: Helvetica, Arial;
-        color: #8B8970;
-        margin-top: 2px;
-        margin-bottom: 2px;
-        margin-left: 10px;
-      }
-      h2 {
-        font-family: Helvetica, Arial;
-        color: #8B8970;
-        margin-top: 2px;
-        margin-bottom: 2px;
-        margin-left: 10px;
-      }
-      h3 {
-        font-family: Helvetica, Arial;
-        color: #FFF;
-      }
-      .container {
-        color: #8B8878;
-        background-color: #FFF;
-        margin: 10px;
-        padding: 10px;
-      }
-      .answers {
-        color: #FFF;
-        background-color: #FCDC3B;
-        margin: 10px;
-        padding: 10px;
-        padding-left: 20px;
-      }
-      .nameInput {
-        padding: 10px;
-      }
-      .ageInput {
-        padding: 10px;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+    <link rel='stylesheet' href='styles.css'/>
   </head>
     <div id='app' class='container'>
       <body>
-        <h1>VueJS2 - The Complete Guide</h1>
-        <h2>Section 2 -Assignment 1</h2>
-        <div id="exercise" class='answers'>
-          <h3>Add your Name and Age - using Interpolation</h3>
-          <p v-once>{{ name }} {{ age }}</p>
-          <hr/>
-          <h3> Output your age, multiplied by 3</h3>
-          <p v-html='dataAndMethodsLink'></p>
-          <p>Age, multiplied by 3 = {{ multipyByThree(age) }}</p>
-          <hr/>
-          <h3>Call a function to output a random number</h3>
-          <p>{{ getRandomNum(1,100) }}</p>
-          <hr/>
-          <h3>Search any image on Google and output it here by binding the "src" attribute</h3>
-            <div>
-            <img v-bind:src='peep'/>
-          </div>
-          <hr/>
-          <h3>Pre-Populate this input with your name (set the "value" attribute)</h3>
-          <p>{{ name }} {{ age }}</p>
-          <div class="nameInput">
-            <b>Change the Name</b>
-            <input type="text" v-on:input='changeName' v-model='name'>
-          </div>
-          <div class="ageInput">
-            <b>Change the Age</b>
-            <input type="text" v-on:input='changeAge' v-model='age'>
+        <div class='menu-container'>
+          <div class='menu'>
+            <h1>VueJS2 - The Complete Guide</h1>
+            <h2>Section 2 -Assignment 1</h2>
           </div>
         </div>
+
+        <div id="exercise" class='answers'>
+
+          <div class='footer'>
+            <div class='footer-item footer-one'>
+              <h3>Add your Name and Age - using Interpolation</h3>
+              <p v-once>{{ name }} {{ age }}</p>
+               <br/><hr/><br/>
+              <div class='code'>
+                &lt;p v-once>&#123; &#123; name &#125; &#125; &#123; &#123; age &#125; &#125;&lt;/p&gt;
+              </div>
+            </div>
+            <div class='footer-item footer-two'>
+              <h3> Output your age, multiplied by 3 </h3>
+              <p>Age, multiplied by 3 = {{ multipyByThree(age) }}</p>
+              <br/><hr/><br/>
+              <div class='code'>
+              &lt;p&gt;Age, multiplied by 3 &#61; &#123; &#123; multipyByThree(age) &#125; &#125; &lt;/p&gt;
+            </div>
+              <br/><br/><br/>
+              <div class='code'>
+                <p v-html='dataAndMethodsLink'></p>
+              </div>
+            </div>
+            <div class='footer-item footer-three'>
+              <h3>Call a function to output a random number</h3>
+              <p>{{ getRandomNum(1,100) }}</p>
+              <br/><hr/><br/>
+              <div class='code'>
+                &lt;p&gt;&#123; &#123; getRandomNum(1,100) &#125; &#125; &lt;/p&gt;
+              </div>
+            </div>
+          </div>
+
+          <div class='footer'>
+
+            <div class='footer-item footer-one'>
+              <h3>Search any image on Google and output it here by binding the "src" attribute</h3>
+              <br/><hr/><br/>
+              <div class='code'>
+                &lt;img v-bind:src='peep'/&gt;
+              </div>
+            </div>
+
+            <div class='footer-item footer-two'>
+              <img v-bind:src='peep'/>
+            </div>
+
+            <div class='footer-item footer-three'>
+              <h3>Pre-Populate this input with your name (set the "value" attribute)</h3>
+              <p>{{ name }} {{ age }}</p>
+              <div class="nameInput">
+                <b>Change the Name</b>
+                <input type="text" v-on:input='changeName' v-model='name'>
+              </div>
+              <div class="ageInput">
+                <b>Change the Age</b>
+                <input type="text" v-on:input='changeAge' v-model='age'>
+              </div>
+              <hr/>
+              <div class='code'>
+                &lt;input type="text" v-on:input='changeName' v-model='name'&gt;
+              </div>
+            </div>
+          </div> <!-- footer -->
+          <div class='codeArea'>
+          <div class='code'> <!-- https://www.ascii.cl/htmlcodes.htm -->
+            new Vue&#40;&#123;<br/>
+            &nbsp;&nbsp;el: '#app',<br/>
+            &nbsp;&nbsp;data: &#123;<br/>
+            &nbsp;&nbsp;name: 'Jen Diamond',<br/>
+            &nbsp;&nbsp;age: 33,<br/>
+            &nbsp;&nbsp;dataAndMethodsLink: "&lt;a href ='https://youtu.be/2MAoq2-2nnE'&gt;Data and Methods Tutorial&lt;/a&gt;",<br/>
+            &nbsp;&nbsp;peep: 'https://i.pinimg.com/736x/8c/50/4c/8c504c6758edfab2e84fa1fbf129ba31--peep-show-happy-happy-happy.jpg',<br/>
+            &nbsp;&nbsp;&#125;,<br/>
+            &nbsp;&nbsp;methods: &#123;<br/>
+            &nbsp;&nbsp;multipyByThree: function&#40;num&#41; &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return parseInt&#40;num&#41; * 3;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br/>
+            &nbsp;&nbsp;getRandomNum: function &#40;min, max) &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = Math.ceil&#40;min&#41;;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = Math.floor&#40;max&#41;+ 1;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Math.floor&#40;Math.random&#40;&#41; * &#40;max - min&#41; + min;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br/>
+            &nbsp;&nbsp;changeName: function&#40;argument&#41; &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = event.target.value;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br/>
+            &nbsp;&nbsp;changeAge: function&#40;argument&#41; &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.age = event.target.value;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br/>
+            &nbsp;&nbsp;&#125;<br/>
+            &#125;);
+          </div> <!-- code -->
+        </div> <!-- codeArea -->
+        </div> <!-- answers -->
       </body>
   </div>
   <script src="main.js"></script>
