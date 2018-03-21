@@ -64,19 +64,18 @@
             </div>
 
             <div class='footer-item footer-three'>
-              <h3>Pre-Populate this input with your name (set the "value" attribute)</h3>
+              <h3>Pre-Populate input value</h3>
               <p>{{ name }} {{ age }}</p>
               <div class="nameInput">
                 <b>Change the Name</b>
-                <input type="text" v-on:input='changeName' v-model='name'>
-              </div>
-              <div class="ageInput">
+                <input type="text" v-on:input='changeName' v-bind:value='name'>
+                <br/>
                 <b>Change the Age</b>
-                <input type="text" v-on:input='changeAge' v-model='age'>
+                <input type="text" v-on:input='changeAge' v-bind:value='age'>
               </div>
               <hr/>
               <div class='code'>
-                &lt;input type="text" v-on:input='changeName' v-model='name'&gt;
+                &lt;input type="text" v-on:input='changeName' v-bind:value='name'&gt;
               </div>
             </div>
           </div> <!-- footer -->
