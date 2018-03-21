@@ -4,24 +4,85 @@
   <meta charset="UTF-8">
   <title></title>
     <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <style>
+      body {
+        background-color: #FBDB0C;
+        margin-top: 20px;
+      }
+      p {
+        font-family: Georgia, Times, serif;
+        color: #615E3F;
+        font-weight: bold;
+      }
+      h1 {
+        font-family: Helvetica, Arial;
+        color: #8B8970;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-left: 10px;
+      }
+      h2 {
+        font-family: Helvetica, Arial;
+        color: #8B8970;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-left: 10px;
+      }
+      h3 {
+        font-family: Helvetica, Arial;
+        color: #FFF;
+      }
+      .container {
+        color: #8B8878;
+        background-color: #FFF;
+        margin: 10px;
+        padding: 10px;
+      }
+      .answers {
+        color: #FFF;
+        background-color: #FCDC3B;
+        margin: 10px;
+        padding: 10px;
+        padding-left: 20px;
+      }
+      .nameInput {
+        padding: 10px;
+      }
+      .ageInput {
+        padding: 10px;
+      }
+    </style>
   </head>
-    <div id='app'>
+    <div id='app' class='container'>
       <body>
-        <div id="exercise">
-           <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
-            <p>VueJS is pretty cool - YOUR_NAME (AGE)</p>
-            <!-- 2) Output your age, multiplied by 3 -->
-            <p></p>
-            <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
-            <p></p>
-            <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+        <h1>VueJS2 - The Complete Guide</h1>
+        <h2>Section 2 -Assignment 1</h2>
+        <div id="exercise" class='answers'>
+          <h3>Add your Name and Age - using Interpolation</h3>
+          <p v-once>{{ name }} {{ age }}</p>
+          <hr/>
+          <h3> Output your age, multiplied by 3</h3>
+          <p v-html='dataAndMethodsLink'></p>
+          <p>Age, multiplied by 3 = {{ multipyByThree(age) }}</p>
+          <hr/>
+          <h3>Call a function to output a random number</h3>
+          <p>{{ getRandomNum(1,100) }}</p>
+          <hr/>
+          <h3>Search any image on Google and output it here by binding the "src" attribute</h3>
             <div>
-                <img style="width:100px;height:100px">
-            </div>
-            <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
-            <div>
-                <input type="text">
-            </div>
+            <img v-bind:src='peep'/>
+          </div>
+          <hr/>
+          <h3>Pre-Populate this input with your name (set the "value" attribute)</h3>
+          <p>{{ name }} {{ age }}</p>
+          <div class="nameInput">
+            <b>Change the Name</b>
+            <input type="text" v-on:input='changeName' v-model='name'>
+          </div>
+          <div class="ageInput">
+            <b>Change the Age</b>
+            <input type="text" v-on:input='changeAge' v-model='age'>
+          </div>
         </div>
       </body>
   </div>
