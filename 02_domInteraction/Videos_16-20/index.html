@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  </head>
+  <body>
+    <div id='app'>
+      <button v-on:click='increase'>Increase the Counter</button>
+      <p>Counter: {{ counter }} </p>
+      <p v-on:mousemove='updateCoordinates'>Coordinates: {{ x }} / {{ y }}</p>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
