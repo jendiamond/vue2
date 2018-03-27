@@ -9,7 +9,15 @@
     <div id='app'>
       <button v-on:click='increase'>Increase the Counter</button>
       <p>Counter: {{ counter }} </p>
-      <p v-on:mousemove='updateCoordinates'>Coordinates: {{ x }} / {{ y }}</p>
+      <hr/>
+      <button v-on:click='increaseByN(2, $event)'>Increase the Counter by 2</button>
+      <p>Counter 2: {{ counter2 }} </p>
+      <hr/>
+      <p v-on:mousemove='updateCoordinates'>Coordinates: {{ x }} / {{ y }}
+      </p>
+      - <span v-on:mousemove.stop=''>DEAD SPOT</span>
+      <hr/>
+      <input type='text' v-on:keyup.enter.space='alertMe'>
     </div>
   </body>
   <script src="main.js"></script>
