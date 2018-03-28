@@ -1,11 +1,11 @@
 new Vue({
-  el: '#app',
+  el: '#exercise',
   data: {
-    title: 'Hello World'
+    value: ''
   },
   methods: {
-    changeTitle: function(event) {
-      this.title = event.target.value;
+    func_name: function() {
+      //stuff
     }
   }
 });
