@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <div id='app' class='container'>
+      <div class='menu-container'>
+        <div class='menu'>
+          <h1>VueJS2 - The Complete Guide</h1>
+          <h2>Section 2 -Assignment 3</h2>
+        </div>
+      </div>
+      <div id="exercise" class='answers'>
+        <div class='footer'>
+
+          <div class='footer-item footer-one'>
+            <h3>1. Show a "result" of 'not there yet'</h3>
+            <h3> as long as "value" is not equal to 37</h3>
+            <h3>You can change "value" with the buttons.</h3>
+            <h3>Print 'done' once you did it</h3>
+            <hr/>
+            <div>
+              <p>Current Value: {{ value }}</p>
+              <button @click="value += 5">Add 5</button>
+              <button @click="value += 1">Add 1</button>
+              <hr/>
+              <div class='code'>
+                &lt;p&gt;Result: &#123; &#123; result() &#125; &#125;&lt;/p&gt;
+
+                &lt;p&gt;Current Value: &#123; &#123; value &#125; &#125;&lt;/p&gt;
+                &lt;button @click="value += 5"&gt;Add 5&lt;/button&gt;
+                &lt;button @click="value += 1"&gt;Add 1&lt;/button&gt;
+
+                &lt;p&gt;Result: &#123; &#123; result() &#125; &#125;&lt;/p&gt;
+              </div>
+            </div>
+          </div>
+
+          <div class='footer-item footer-two'>
+            <h3>2. Watch for changes in the "result"</h3>
+            <h3>and reset the "value" after 5 seconds</h3>
+            <h4>(hint: setTimeout(..., 5000)</h4>
+            <hr/>
+            <div>
+              <!-- <input type="text"> -->
+              <p>Reset Value: {{ value }}</p>
+              <hr/>
+            </div>
+          </div>
+
+        </div><!-- <div class='footer'> -->
+      </div><!-- <div id="exercise" class='answers'> -->
+      <div class='codeArea'>
+        <div class='code'> <!-- https://www.ascii.cl/htmlcodes.htm -->
+            new Vue&#40;&#123;<br/>
+            &nbsp;&nbsp;el: '#exercise',<br/>
+            &nbsp;&nbsp;data: &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;value: 0,<br/>
+            &nbsp;&nbsp;&#125;,<br/>
+
+            &nbsp;&nbsp;computed: &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;output: function(value) &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this.value &lt; 37 ? 'not there yet' : 'done';<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
+            &nbsp;&nbsp;&#125;,<br/>
+
+            &nbsp;&nbsp;watch: &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;value: function&#40;value&#41; &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var vm = this;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(function()&#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vm.value = 0;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
+            &nbsp;&nbsp;&#125;,<br/>
+
+            &nbsp;&nbsp;methods: &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;result: function&#40;value&#41; &#123;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this.value &lt; 37 ? 'not there yet' : 'done';<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
+            &nbsp;&nbsp;&#125;<br/>
+            &#125;);
+        </div>
+      </div>
+    </div><!-- <div id='app' class='container'> -->
+  </body>
+  <script src="main.js"></script>
+</html>
