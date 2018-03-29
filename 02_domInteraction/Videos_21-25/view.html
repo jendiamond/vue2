@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+    <div id='app' class='container'>
+    <body>
+      <h1>Video 24</h1>
+      <h2>Watching for Changes with the watch property</h2>
+      <h3>Reset the counter after 3 seconds</h3>
+      <p>Another way to work with dependencies</p>
+      <p><code>watch</code> executes code upon data changes.</p>
+      <p>Reacts to every change. Use it if you need an asynchronous task.</p>
+      <p>Here I wrote the code that I want to execute whenever counter changes. </p>
+
+      <div class='vue-area'>
+        <button v-on:click='counter++'>Increase</button>
+        <button v-on:click='counter--'>Decrease</button>
+        <button v-on:click='secondCounter++'>secondCounter</button>
+        <h3>Counter: {{ counter }} | Second Counter: {{ secondCounter }}</h3>
+        <h3>Result: {{ result() }} | Output: {{ output }} </h3>
+      </div>
+
+      <br/><hr/><br/>
+
+      <h1>Video 25</h1>
+      <h2>Shorthand</h2>
+      <div class='vue-area'>
+        <h3><code>v-on=click</code> === <code>@click</code></h3>
+        <h3><code>v-bind:href</code> === <code>:href</code></h3>
+      </div>
+    </body>
+  </div>
+  <script src="view.js"></script>
+</html>

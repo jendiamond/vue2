@@ -1,0 +1,98 @@
+body {
+  background-color: #FBDB0C;
+  margin-top: 20px;
+}
+p {
+  font-family: Georgia, Times, serif;
+  color: #8B864E; /* khaki4 */
+  font-weight: bold;
+  margin-left: 20px;
+}
+h1 {
+  font-family: Helvetica, Arial;
+  color: #FCDC3B; /*pineapple*/
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+h2 {
+  font-family: Helvetica, Arial;
+  color: #FCDC3B; /*pineapple*/
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+h3 {
+  font-family: Helvetica, Arial;
+  color: #FCDC3B; /*pineapple*/;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+h4 {
+  font-family: Helvetica, Arial;
+  color: #FCDC3B; /*pineapple*/;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+a:link {
+  color: #E9967A; /*darksalmon */
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CD0000; /*red*/
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+hr {
+  border: 0;
+  border-bottom: 1px dashed #E9967A; /*salmon*/
+  background: #FBDB0C;
+}
+code {
+  font-family: 'Overpass Mono', monospace;
+  color: #E9967A; /*darksalmon */
+}
+.container {
+  color: #8B8878;
+  background-color: #FFF;
+  margin: 10px;
+  padding: 10px;
+}
+.vue-area {
+  background-color: #FFF;
+  margin: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border: 1px solid #C6C3B5; /* ash */
+}
+.button {
+  background: #eea6b2; /*pink*/
+  border-radius: 29px;
+  color: white;
+  font-family: Helvetica, Arial;
+  font-size: 24px;
+  font-weight: 100;
+  padding: 5px 15px 5px 13px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 20px;
+}
