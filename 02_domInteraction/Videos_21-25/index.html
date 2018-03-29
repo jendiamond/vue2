@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+
+    <body>
+      <div id='app' class='container'>
+      <br/><hr/><br/>
+
+      <h1>Video 21</h1>
+      <h2>Using javascript code in the template {{}}</h2>
+      <p>Set up a Vue directive <code>v-on</code> that listens for the click event which calls the Vue <code>increase method</code> with the argument 3 (which increases the value of the counter by 3) to happen when the event is recorded </p>
+
+      <div class='vue-area'>
+        <button v-on:click='increase(3, $event)'>Increase</button>
+        <h3>Counter1: {{ counter1 }}</h3>
+        <h3>Counter1 * 2: {{ counter1 * 2 }}</h3>
+        <h3>{{ counter1 >= 10 ? 'Greater than 10' : 'Smaller than 10' }}</h3>
+      </div>
+
+      <hr/><br/>
+
+      <h1>Video 22</h1>
+      <h2>Using two way data binding with v-model</h2>
+      <p><code>v-model='name'</code>  is the same as using <code>v-bind</code> and <code>&#123; &#123; name &#125; &#125;</code></p>
+      <div class='vue-area'>
+        <input type="text" v-model='name'>
+        <h3>{{ name }}</h3>
+      </div>
+
+      <br/><hr/><br/>
+
+      <h1>Video 23</h1>
+      <h2>Using the result data object to store the result</h2>
+      <p>Set the result as data object to store the result</p>
+      <p>This is not mantainable because the code for <code>result</code> is in 2 different methods and therefore storing the data improperly. Data is not reactive.</p>
+      <div class='vue-area'>
+        <button v-on:click='increase2'>Increase</button>
+        <button v-on:click='decrease2'>Decrease </button>
+        <h3>Counter2: {{ counter2}}</h3>
+        <h3>Result2: {{ result2 }}</h3>
+      </div>
+
+      <h2>Reacting to changes with the computed property</h2>
+      <h3>Working with dependencies</h3>
+      <h4>Set up the property then as function we set up the logic how the property should be computed.</h4>
+      <p>Increase and decrease the counter with the Vue directive <code>v-on:click='counter++'</code></p>
+      <p> Use a result method to set the logic.</p>
+      <p> The computed property stores data and can be used in the same way data objects are used. It caches the result.</p>
+      <p>Use Computed properties wherever you can because it is more optomizes because of the caching. It runs efficiently and avoids unecessary tasks.</p>
+      <div class='vue-area'>
+        <button v-on:click='counter3++'>Increase</button>
+        <button v-on:click='counter3--'>Decrease </button>
+        <button v-on:click='secondCounter++'>Increase Second</button>
+        <h3>Counter: {{ counter3 }} | Second Counter: {{ secondCounter }}</h3>
+        <h3>Result3: {{ result3() }} | {{ output }}</h3>
+      </div>
+
+    </body>
+  </div>
+  <script src="main.js"></script>
+</html>
