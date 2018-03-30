@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link rel='stylesheet' href='styles.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+  </head>
+  <body>
+    <div id='app' class='container'>
+
+      <h2><a href='https://vuejs.org/v2/guide/class-and-style.html'>Class and Style Binding</a></h2>
+      <p>The object syntax for v-bind:style is pretty straightforward - it looks almost like CSS, except it’s a JavaScript object. You can use either camelCase or kebab-case (use quotes with kebab-case) for the CSS property names:</p>
+     <div class='codeArea'><code>
+        &lt;div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"&gt;&lt;/div&gt;
+      </code></div>
+
+      <pre><div class='codeArea'><code>
+        data: &#123;<br>
+          &nbsp;&nbsp;activeColor: 'red',<br>
+          &nbsp;&nbsp;fontSize: 30<br>
+          &#125;
+      </code></div></pre>
+
+      <p>It is often a good idea to bind to a style object directly so that the template is cleaner:</p>
+      <div class='codeArea'>
+        <code>&lt;div v-bind:style="styleObject"&gt;&lt;/div&gt;</code>
+      </div>
+
+      <div class='codeArea'>
+        <code>data: &#123;<br>
+          &nbsp;&nbsp;styleObject: &#123;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;color: 'red',<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;fontSize: '13px'<br>
+          &nbsp;&nbsp;&#125;<br>
+        &#125;</code>
+      </div>
+
+      <hr/>
+
+      <div>
+        <h1>Video 29</h1>
+        <h2>Setting Styles Dynamically without CSS</h2>
+        <p>Using a computed property we can add more capabilty and toggle between two colors.</p>
+
+        <div class='parallelogram1' :style='{backgroundColor: color2}'></div>
+        Input a color: <input type='text' v-model='color2'>
+
+        <p><em>index.html</em></p>
+        <div class='codeArea'>
+          <code>&lt;div class='parallelogram1' :style='{backgroundColor: color}' }"&gt;&lt;/div&gt;</code>
+        </div>
+
+        <div class='codeArea'>
+          <code>&lt;input type='text' v-model='color'&gt;</code>
+        </div>
+
+        <p><em>main.js</em></p>
+        <div class='codeArea'>
+          <code>
+            data: &#123;<br>
+            &nbsp;&nbsp;color: 'orchid',<br>
+            &#125;,
+          </code>
+        </div>
+
+      <hr/>
+
+      <div class='parallelogram2' :style='myStyle'></div>
+        Input a color: <input type='text' v-model='color'>
+        Input a width: <input type='text' v-model='width'>
+
+        <p><em>index.html</em></p>
+        <div class='codeArea'>
+          <code>&lt;div class='parallelogram' :style='myStyle'&gt;&lt;/div&gt;</code>
+        </div>
+
+        <div class='codeArea'>
+          <code>&lt;input type='text' v-model='color'&gt;</code>
+        </div>
+
+        <div class='codeArea'>
+          <code>&lt;input type='text' v-model='width'&gt;</code>
+        </div>
+
+        <p><em>main.js</em></p>
+        <div class='codeArea'>
+          <code>
+            data: &#123;<br>
+            &nbsp;&nbsp;color: 'yellow',<br>
+            &nbsp;&nbsp;width: 200<br>
+            &#125;,
+            computed: &#123;<br>
+            &nbsp;&nbsp;myStyle: function(){<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundColor: this.color,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: this.width,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+            &nbsp;&nbsp;&#125;<br>
+            &#125;,
+          </code>
+        </div>
+
+      </div>
+
+      <hr/>
+
+      <div>
+        <h1>Video 30</h1>
+        <h2>Styling Elements with the Array Syntax</h2>
+        <p>The array syntax for v-bind:style allows you to apply multiple style objects to the same element:</p>
+
+        <pre><div class='codeArea'><code>
+          &lt;div v-bind:style="[baseStyles, overridingStyles]"&gt;&lt;/div&gt;
+        </code></div></pre>
+
+      <hr/>
+
+      <div class='square' :style="[myStyle2, {height: width + 'px'}]"></div>
+        Input a color: <input type='text' v-model='color3'>
+        Input a width: <input type='text' v-model='width'>
+
+        <p><em>index.html</em></p>
+        <pre><div class='codeArea'><code>
+          <code>&lt;div class='square' :style="[myStyle2, {height: width + 'px'}]"&gt;&lt;/div&gt;</code>
+        </code></div></pre>
+
+      </div>
+
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
+
+<!-- dogerblue | navy | steelblue | deepskyblue | aqua | turquoise | lightgreen | limegreen | orchid | slateblue | blueviolet | lavender | hotpink | deeppink | gold | lemonchiffon | coral | lightsalmon | mintcream | honeydew | azure | snow -->

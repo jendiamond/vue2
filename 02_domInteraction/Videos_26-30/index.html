@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <div id='app' class='container'>
+      <div>
+        <h1>Video 26</h1>
+        <h2>Dynamic Styling with CSS Classes - Basics</h2>
+        <p>Click each circle</p>
+        <div class='demo' @click="attachRed = !attachRed" :class="{red: attachRed}"></div>
+        <div class='demo' @click="attachOrange = !attachOrange" :class="{orange: attachOrange}"></div>
+        <div class='demo' @click="attachYellow = !attachYellow" :class="{yellow: attachYellow}"></div>
+        <div class='demo' @click="attachGreen = !attachGreen" :class="{green: attachGreen}"></div>
+        <div class='demo' @click="attachBlue = !attachBlue" :class="{blue: attachBlue}"></div>
+        <div class='demo' @click="attachIndigo = !attachIndigo" :class="{indigo: attachIndigo}"></div>
+        <div class='demo' @click="attachViolet = !attachViolet" :class="{violet: attachViolet}"></div>
+
+        <p><em>index.html</em></p>
+        <div class='codeArea'>
+          <code>&lt;div class='demo' @click="attachOrange = !attachOrange" :class="{orange: attachOrange}"&gt;&lt;/div&gt;</code>
+        </div>
+
+        <p><em>styles.css</em></p>
+        <pre><div class='codeArea'><code>
+          .demo {
+            width: 60px;
+            height: 60px;
+            border: 1px solid gray;
+            display: inline-block;
+            margin: 10px;
+            border-radius: 50%;
+          }
+          .red {
+            background-color: red;
+          }
+          .orange {
+            background-color: #FF7F00;
+          }
+          .yellow {
+            background-color: yellow;
+          }
+          .green {
+            background-color: #37b206;
+          }
+          .blue {
+            background-color: #2165d8;
+          }
+          .indigo {
+            background-color: indigo;
+          }
+          .violet {
+            background-color: #8A2BE2;
+          }
+        </code></div></pre>
+
+        <p><em>main.js</em></p>
+        <pre><div class='codeArea'><code>
+        new Vue({
+          el: '#app',
+          data: {
+            attachRed: false,
+            attachOrange: false,
+            attachYellow: false,
+            attachGreen: false,
+            attachBlue: false,
+            attachIndigo: false,
+            attachViolet: false,
+          }
+        });
+        </code></div></pre>
+      </div>
+
+      <hr/>
+
+      <div>
+        <h1>Video 27</h1>
+        <h2>Dynamic Styling with CSS Classes - Using Objects</h2>
+        <p>Using a computed property we can add more capabilty and toggle between two colors.</p>
+        <div class='demo2' @click="attachPink = !attachPink" :class="pinkish">&nbsp;CLICK</div>
+      </div>
+
+      <hr/>
+
+      <div>
+        <h1>Video 28</h1>
+        <h2>Dynamic Styling with CSS Classes - Using Names</h2>
+        <p>Dynamically derive which class should be attached by binding the color property to the div.</p>
+
+        <div class='rectangle' :class='color'></div>
+        Input a color: <input type='text' v-model='color'>
+
+        <p><b>Some suggestions:</b> red | orange | green | blue | indigo | violet | pink | gray</p>
+
+      </div>
+
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
+
+<!-- dogerblue | navy | steelblue | deepskyblue | aqua | turquoise | lightgreen | limegreen | orchid | slateblue | blueviolet | lavender | hotpink | deeppink | gold | lemonchiffon | coral | lightsalmon | mintcream | honeydew | azure | snow -->

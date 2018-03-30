@@ -1,0 +1,131 @@
+.demo {
+  width: 60px;
+  height: 60px;
+  border: 1px solid gray;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 50%;
+}
+.demo2 {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 200px solid mintcream;
+  border-bottom: 50px solid transparent;
+}
+.rectangle {
+  height: 100px;
+  width: 600px;
+}
+.parallelogram1 {
+  width: 200px;
+  height: 100px;
+  transform: skew(20deg);
+  background: #555;
+  background-color: gray;
+  margin-left: 20px;
+}
+.parallelogram2 {
+  width: 200px;
+  height: 100px;
+  transform: skew(-20deg);
+  background: #555;
+  background-color: gray;
+  margin-left: 20px;
+}
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+}
+/*------------------------------------------------------*/
+.red {
+  background-color: red;
+}
+.orange {
+  background-color: #FF7F00;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: #37b206;
+}
+.blue {
+  background-color: #2165d8;
+}
+.indigo {
+  background-color: indigo;
+}
+.violet {
+  background-color: #8A2BE2;
+}
+.gray {
+  background-color: gray;
+}
+.pink {
+  background-color: #ffaabb;
+}
+.celadon-green {
+  background-color: #bbffd4;
+}
+.pale-blue {
+  background-color: #9fddea;
+}
+.whitesmoke {
+  background-color: whitesmoke;
+}
+
+/*
+https://www.w3schools.com/howto/howto_css_shapes.asp
+*/
+/*------------------------------------------------------*/
+.container {
+  color: #8B8878;
+  background-color: #FFF;
+  margin: 10px;
+  padding: 10px;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.codeArea{
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1.5px solid #a5b8b8;
+  background-color: azure;
+}
+p {
+  font-family: Helvetica, Arial;;
+  color: #ccc
+  font-weight: bold;
+}
+a:link {
+  color: #E9967A; /*darksalmon */
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #c4765c; /*darkersalmon */
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: crimson;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
