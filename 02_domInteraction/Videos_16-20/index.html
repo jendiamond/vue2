@@ -13,10 +13,12 @@
       <button v-on:click='increaseByN(2, $event)'>Increase the Counter by 2</button>
       <p>Counter 2: {{ counter2 }} </p>
       <hr/>
-      <p v-on:mousemove='updateCoordinates'>Coordinates: {{ x }} / {{ y }}
+      <p v-on:mousemove='updateCoordinates' style='height: 200px;width: 300px; background-color: gold;'>Coordinates: {{ x }} / {{ y }}
+        <span v-on:mousemove.stop='' style='height: 100px;width: 100px; background-color: blue;'>DEAD SPOT</span>
       </p>
-      - <span v-on:mousemove.stop=''>DEAD SPOT</span>
+
       <hr/>
+      <p> Enter some Text and hit the ENTER KEY</p>
       <input type='text' v-on:keyup.enter.space='alertMe'>
     </div>
   </body>
