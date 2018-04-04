@@ -1,5 +1,5 @@
 new Vue({
-  el: '#exercise',
+  el: '#app',
   data: {
     value: 0,
   },
