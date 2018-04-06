@@ -3,8 +3,19 @@ new Vue({
   data: {
     selectClass: {
       shrink: true,
-      highlight: false
+      highlight: false,
     },
+    width: 300,
+    color: 'lightblue',
+    borderClass: '500px dotted aqua',
+  },
+  computed: {
+    triStyle: function(){
+      return {
+        width: this.width + 'px',
+        backgroundColor: this.color
+      }
+    }
   },
   methods: {
     startEffect: function () {
