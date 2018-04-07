@@ -13,7 +13,7 @@ new Vue({
       var vm = this;
       setTimeout(function(){
         vm.value = 0;
-      }
+      });
     }
   },
   methods: {
