@@ -1,0 +1,57 @@
+/*------------------------Vue Styles------------------------------*/
+
+
+
+/*------------------------Page Styles------------------------------*/
+/*
+https://www.w3schools.com/howto/howto_css_shapes.asp
+*/
+.container {
+  color: #8B8878;
+  background-color: #FFF;
+  margin: 10px;
+  padding: 10px;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.codeArea{
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1.5px solid #a5b8b8;
+  background-color: azure;
+}
+p {
+  font-family: Helvetica, Arial;;
+  color: #ccc
+  font-weight: bold;
+}
+a:link {
+  color: #E9967A; /*darksalmon */
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #c4765c; /*darkersalmon */
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: crimson;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
