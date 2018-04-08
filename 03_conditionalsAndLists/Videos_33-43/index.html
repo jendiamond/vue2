@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>Chapter 3 - Videos 33-43</title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+  </head>
+  <body>
+    <div id='app' class='container'>
+
+      <h2>v-if & v-else</h2>
+      <h1>{{ display }}</h1>
+      <p v-if='display'>You can see me!</p>
+      <p v-else>Now You can see me!</p>
+      <p>Do you see me too!</p>
+      <button @click='display = !display'>Switch</button>
+
+      <hr>
+
+      <h2>Template Tags</h2>
+      <template v-if='display'>
+        <h3>Template Heading</h3>
+        <p>Inside the Template</p>
+      </template>
+
+      <hr>
+      <h2>v-show</h2>
+      <p v-show='display'>You can see me!</p>
+      <p v-else>Now You can see me!</p>
+      <p>Do you see me too!</p>
+      <button @click='display = !display'>Switch</button>
+
+      <hr>
+
+      <ul>
+        <li v-for='(ingredient, index) in ingredients'>{{ index + 1 }}. {{ ingredient }}</li>
+      </ul>
+
+      <hr>
+
+        <template v-for='(ingredient, index) in ingredients'>
+          <h1>{{ index + 1 }}</h1>
+          <h2>{{ ingredient }}</h2>
+        </template>
+
+      <hr>
+
+      <ul>
+        <li v-for='(person, index) in people'>{{ index + 1 }}. {{ person.name }}</li>
+      </ul>
+
+       <ul>
+        <li v-for='person in people'>
+          <span v-for='(value, key, index) in person'>{{ index + 1}}. {{ key }}: {{ value }}</span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <span v-for='n in 10'>{{ n }}</span>
+
+      <hr>
+
+      <ul>
+        <li v-for='(ingredient, index) in ingredients' :key='ingredient'>{{ ingredient }}</li>
+      </ul>
+
+      <button @click="ingredients.push('spices')">Add New Ingredient</button>
+    </div>
+
+  </body>
+  <script src='main.js'></script>
+</html>
