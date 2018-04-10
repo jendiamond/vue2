@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Ch3 Assignment 5</title>
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+  </head>
+  <body>
+    <div id="exercise" class = 'container'>
+
+      <div class='menu-container'>
+        <div class='menu'>
+          <h1>VueJS2 - The Complete Guide</h1>
+          <h2>Section 3 -Assignment 5</h2>
+        </div>
+      </div>
+
+      <div class='answers'>
+        <p>1. Hook up the button to toggle the display of the two paragraphs. Use both v-if and v-show and inspect the elements to see the difference<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<pre><code>display: true</code></pre></p>
+
+        <div class='answer'>
+          <h3>display: {{ display }}</h3>
+          <button @click='display = !display'>Toggle</button>
+          <p v-if='display'>When the value of the data element <code>display</code> is True while using <code>v-if</code><br>You either see me ...</p>
+          <p v-else>...or ME when the value of the data element <code>display</code> is  False<br><code>v-if</code> deletes the <code>&lt;p&gt;</code> tag in the DOM</p>
+          <hr>
+          <p v-show='display'>When the value of the data element <code>display</code> is True while using <code>v-show</code><br>You either see ME ...</p>
+          <p v-show='!display'>...or ME when the value of the data element <code>display</code> is  False<br><code>v-show</code> adds <code>style="display: none"</code> to the <code>&lt;p&gt;</code> tag in the DOM which hides it</p>
+        </div>
+
+        <p>The code that displays in the DOM when the value of the data element <code>display</code> is  False</p>
+        <div class ='codeArea'>
+          <pre><code>
+            &lt;div&gt;
+              &lt;button&gt;Toggle&lt;/button&gt;
+              &lt;p&gt;...or me&lt;/p&gt; &lt;hr&gt;
+              -----------------------------------------------------
+              &lt;p style="display: none;"&gt;You either see ME ...&lt;/p&gt;
+              &lt;p&gt;...or me&lt;/p&gt;
+            &lt;/div&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class='answers'>
+        <p>2. Output an &lt;ul&gt; of array elements of your choice. Also print the index of each element.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<pre><code>cuteNames: ['Pikku', 'Friendly', 'Peeps', 'Floofers']</code></pre>
+        </p>
+        <div class='answers'>
+          <ul>
+            <li v-for='(name, index) in cuteNames'>{{ `${name} is at index ${index }` }}</li>
+          </ul>
+        </div>
+
+        <pre><code class="language-html">
+          &lt;ul&gt;
+            &lt;li v-for='(name, index) in cuteNames'&gt;<br/>
+            &nbsp;&nbsp;&#123; &#123; `${name} is at index ${index }` &#125; &#125;<br/>
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        </code></pre>
+      </div>
+
+        <hr>
+
+      <div class='answers'>
+        <p>3. Print all key-value pairs of the following object:<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<pre><code>books: {title: 'Lord of the Rings', author: 'J.R.R. Tolkiens', amount: '3'}</code></pre><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;Also print the index of each item.</p>
+        <div class='answers'>
+          <ul>
+            <li v-for='(value, key, index) in books'>
+             {{ key }}: {{ value }} / at index: {{ index }}
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <pre><code>
+          &lt;ul&gt;
+            &lt;li v-for='(value, key, index) in books'&gt;
+                &#123; &#123; key &#125; &#125;: &#123; &#123; value &#125; &#125; / at index: &#123; &#123; index &#125; &#125;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        </code></pre>
+      </div>
+        <hr>
+
+<!-- https://vuejs.org/v2/guide/list.html#v-for-with-v-if -->
+      <div class='answers'>
+        <p>4. Print the following object (only the values)<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;and Create a nested loop for the array:<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<pre><code>testData: {name: 'TESTOBJECT', id: 10, data: [1.67, 1.33, 0.98, 2.21]}</code></pre><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;(hint: use v-for and v-if to achieve this)</p>
+
+        <div class='answers'>
+          <ul>
+            <li v-for='value in testData'>
+              <template v-if='Array.isArray(value)'>
+                <div v-for='element in value'>{{ element }}</div>
+                </template>
+              <template v-else>{{ value }}</template>
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <pre><code>
+          &lt;ul&gt;
+            &lt;li v-for='value in testData'&gt;
+              &lt;template v-if='Array.isArray(value)'&gt;
+                &lt;div v-for='element in value'&gt;&#123; &#123; element &#125; &#125;&lt;/div&gt;
+              &lt;/template&gt;
+              &lt;template v-else&gt;&#123; &#123; value &#125; &#125;&lt;/template&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        </code></pre>
+      </div>
+
+      </div>
+    </div>
+
+  </body>
+  <script src="main.js"></script>
+</html>
