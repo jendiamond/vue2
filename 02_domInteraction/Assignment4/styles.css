@@ -4,31 +4,82 @@
   border: 1px solid black;
   border-radius: 50%;
 }
-
 .highlight {
   background-color: #FF69B4;
   width: 500px !important;
 }
-
 .shrink {
   background-color: pink;
   width: 200px !important;
 }
-
 .triangle {
   width: 0px;
   height: 0;
   border-top: 50px solid transparent;
   border-left: 100px solid yellow;
   border-bottom: 50px solid transparent;
-  color: indigo;
   font-family: Helvetica, sanserif;
+  margin-bottom: 20px;
 }
-
+.blue {
+  color: skyblue;
+}
+.font {
+  font-family: Georgia;
+  font-weight: bold;
+  font-size: 2em;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+.aquas {
+  color: teal;
+  background-color: aquamarine;
+  text-align: center;
+  padding-top: 20px;
+  width: 300px;
+  font-size: 100%;
+  margin: 10px;
+}
+.fuchsias {
+  color: pink;
+  background-color: fuchsia;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 2px;
+  border: 10px solid hotpink;
+  width: 500px;
+  font-size: 36px;
+  margin: 10px;
+}
+.greens {
+  color: palegreen;
+  background-color: mediumseagreen;
+  border: 3px solid darkseagreen;
+  width: 400px;
+  padding-top: 20px;
+  padding-right: 2px;
+  font-size: 48px;
+  margin: 10px;
+}
+.visible {
+  width: 300px;
+  height: 100px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: powderblue;
+}
+.progress-bar {
+  width: 600px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
 /*-----------------*/
-button {
-  margin-bottom: 10px;
-}
+
 .container {
   margin: 20px;
   border: 1px solid black;
@@ -53,4 +104,61 @@ p {
 }
 h2 {
   font-family: Helvetica, Arial;
+}
+.answer {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+button {
+  background: #eea6b2; /*pink*/
+  border-radius: 29px;
+  color: white;
+  font-family: Helvetica, Arial;
+  font-size: 24px;
+  font-weight: 100;
+  padding: 5px 15px 5px 13px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 20px;
+  margin-bottom: 10px;
+}
+.codeReveal {
+  background: teal;
+  border-radius: 29px;
+  color: white;
+  font-family: Helvetica, Arial;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 5px 15px 5px 13px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 20px;
+  margin-bottom: 10px;
+}
+code {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 1em;
+  font-style: bold;
+  color: teal;
+}
+.codeArea{
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background-color: mintcream;
+  border-radius:35px;
+}
+/*https://github.com/jgm/pandoc/issues/3858*/
+
+pre {
+  overflow-x: auto;
+}
+/*http://mediatemple.net/blog/tips/considerations-for-styling-the-pre-tag/*/
+.suggestions {
+  font-family: Georgia;
+  font-size: 12px;
+  color: steelblue;
 }

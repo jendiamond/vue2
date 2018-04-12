@@ -12,60 +12,389 @@
 
     <div class='menu-container'>
       <div class='menu'>
-        <h2>Section 2 - Assignment 4</h2>
-
-      </div>
+        <h1>VueJS2 - The Complete Guide</h1>
+        <h2>Section 2 -Assignment 4</h2>
+      </div>z
     </div>
 
     <p>1. Start the Effect with the Button.<br>
       The Effect should alternate the 'highlight' or 'shrink' class on each new setInterval tick<br>
-      (attach respective class to the div with id 'effect' below)</p>
+      (attach respective class to the div with id 'effect' below)<br>
+      <i>Refresh the page to stop the effect.</i></p>
+    <div class = 'answer'>
+      <button @click='startEffect'>Start Effect</button>
+      <div id='effect' v-bind:class='selectClass'></div>
 
-    <button @click='startEffect'>Start Effect</button>
-    <div id='effect' v-bind:class='selectClass'></div>
+      <hr>
 
-     <hr/>
+      <button class='codeReveal' @click="display1 = !display1">View Code for exercise 1</button>
+      <div v-if='display1'>
+        <p><i>index.html</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            &lt;button @click='startEffect'>Start Effect&lt;/button&gt;
+            &lt;div id='effect' v-bind:class='selectClass'&gt;&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <p><i>main.js</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            new Vue({
+              el: '#app',
+              data: {
+                selectClass: {
+                  shrink: true,
+                  highlight: false,
+                },
+              },
+
+              methods: {
+                startEffect: function () {
+                  var vm = this;
+                  setInterval(function () {
+                    vm.selectClass.shrink = !vm.selectClass.shrink;
+                    vm.selectClass.highlight = !vm.selectClass.highlight;
+                  }, 3000);
+                },
+              }
+          </code></pre>
+        </div>
+
+        <p><i>styles.css</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            #effect {
+              width: 400px;
+              height: 200px;
+              border: 1px solid black;
+              border-radius: 50%;
+            }
+
+            .highlight {
+              background-color: #FF69B4;
+              width: 500px !important;
+            }
+
+            .shrink {
+              background-color: pink;
+              width: 200px !important;
+            }
+          </code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <hr/>
 
     <p> 2. Create a couple of CSS classes and attach them via the array syntax </p>
-    <div class='triangle' :style="[triStyle, {background: color}]">TRIANGLE</div>
+
+    <div :class="['triangle', blue, 'font']">Pointy</div>
+    <hr/>
+
+      <button class='codeReveal' @click="display2 = !display2">View Code for exercise 2</button>
+      <div v-if='display2'>
+        <p><i>index.html</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            &lt;div :class="['triangle', blue, 'font']"&gt;Pointy&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <p><i>main.js</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            new Vue({
+              el: '#app',
+              data: {
+                blue: 'blue'
+              }
+            }
+          </code></pre>
+        </div>
+
+        <p><i>styles.css</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            .triangle {
+              width: 0px;
+              height: 0;
+              border-top: 50px solid transparent;
+              border-left: 100px solid yellow;
+              border-bottom: 50px solid transparent;
+              font-family: Helvetica, sanserif;
+              margin-bottom: 20px;
+            }
+            .blue {
+              color: skyblue;
+            }
+            .font {
+              font-family: Georgia;
+              font-kerning: 2em;
+              font-size: 2em;
+            }
+          </code></pre>
+        </div>
+      </div>
 
     <hr/>
 
     <p> 3. Let the user enter a class Create some example classes. and attach it </p>
 
     <div>
-      <p>Enter a color</p><input type='text' v-model='color'>
+      <p>Enter the class aquas or fuchsias: <input type='text' v-model='boxStyling'></p>
 
-     <div class='demo' @click="attachRed = !attachRed" :class="{red: attachRed}"></div> -->
+      <div :class="[{box: true}, boxStyling]">HOLA EBOLA</div>
+
     </div>
 
     <hr/>
-<!--
+
+
+      <button class='codeReveal' @click="display3 = !display3">View Code for exercise 3</button>
+      <div v-if='display3'>
+        <p><i>index.html</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            &lt;p&gt;Enter the class aquas or fuchsias: &gt;&lt;input type='text' v-model='boxStyling'&gt;&lt;/p&gt;
+            &lt;div :class="[{box: true}, boxStyling]"&gt;HOLA EBOLA&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <p><i>main.js</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            new Vue({
+              el: '#app',
+              data: {
+                boxStyling: '',
+                aquas: 'aquas',
+                fuchsias: 'fuchsias',
+              },
+            }
+          </code></pre>
+        </div>
+
+        <p><i>styles.css</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            .box {
+              width: 100px;
+              height: 100px;
+              border: 1px solid #ccc;
+              margin: 10px;
+            }
+            .aquas {
+              color: teal;
+              background-color: aquamarine;
+              text-align: center;
+              padding-top: 20px;
+              width: 300px;
+              font-size: 100%;
+            }
+            .fuchsias {
+              color: pink;
+              background-color: fuchsia;
+              text-align: right;
+              padding-top: 20px;
+              padding-right: 2px;
+              border: 10px solid hotpink;
+              width: 500px;
+            }
+          </code></pre>
+        </div>
+      </div>
+
+    <hr/>
+
+
     <p> 4. Let the user enter a class and enter true/ false for another class Create some example classes and attach the classes </p>
 
     <div>
-      <input type='text' v-model=''>
-      <input type='text' v-model=''>
-      <div></div>
+      Enter the class greens or fuchsias: <input type='text' v-model='boxStyling2'><br>
+      <div :class="[boxStyling2]"></div><br>
+      Enter any word to see the oval. <input type='text' v-model='isVisible'>
+      <p>Because a String returns as True <code>isVisible</code> will be <code>'visible'</code> which calls <code>isVisible</code> which returns True. It is only False when the input box is empty because then the class is undefined which is False or there really is just no class defined so nothing appears.</p>
+      <div :class="[{visible: isVisible}, boxStyling]"></div>
     </div>
 
     <hr/>
 
-    <p> 5. Repeat 3. but now with values for styles Instead of class names. Attach the respective styles. </p>
+      <button class='codeReveal' @click="display4 = !display4">View Code for exercise 4</button>
+      <div v-if='display4'>
+        <p><i>index.html</i></p>
+        <div class='codeArea'>
+          <pre><code>
+&lt;p&gt;Enter the class greens or fushias: &gt;&lt;input type='text' v-model='boxStyling2'&gt;&lt;/p&gt;
+&lt;p&gt;Enter true or false: &gt;&lt;input type='text' v-model= 'isVisible'&gt;&lt;/p&gt;
+&lt;div :class="[{visible: isVisible}, boxStyling2]"&gt;&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <p><i>main.js</i></p>
+        <div class='codeArea'>
+          <pre><code>
+        new Vue({
+          el: '#app',
+          data: {
+            boxStyling2: '',
+            aquas: 'aquas',
+            greens: 'greens',
+          },
+        }
+          </code></pre>
+        </div>
+
+        <p><i>styles.css</i></p>
+        <div class='codeArea'>
+          <pre><code>
+  .box {
+     width: 100px;
+     height: 100px;
+     border: 1px solid #ccc;
+     margin: 10px;
+   }
+   .aquas {
+     color: teal;
+     background-color: aquamarine;
+     text-align: center;
+     padding-top: 20px;
+     width: 300px;
+     font-size: 100%;
+   }
+   .fushias {
+     color: pink;
+     background-color: fuchsia;
+     text-align: right;
+     padding-top: 20px;
+     padding-right: 2px;
+     border: 10px solid hotpink;
+     width: 500px;
+   }
+   .greens {
+      color: palegreen;
+      background-color: mediumseagreen;
+      border: 3px solid darkseagreen;
+      width: 400px;
+      padding-top: 20px;
+      padding-right: 2px;
+      font-size: 48px;
+    }
+          </code></pre>
+        </div>
+      </div>
+
+    <hr/>
+
+<p> 5. Repeat 3. but now with values for styles Instead of class names. Attach the respective styles. </p>
 
     <div>
-      <input type='text'>
-      <div></div>
+      <p>Enter a color:</p>
+      <p class='suggestions'><b>Suggestions:</b> pink, lightpink, hotpink, deeppink, palevioletred, mediumvioletred, red, lightsalmon, salmon, darksalmon, lightcoral, indianred, crimson, firebrick, darkred, red, orange, orangered, tomato, coral, darkorange, orange, yellow, yellow, lightyellow, lemonchiffon, lightgoldenrodyellow, papayawhip, moccasin, peachpuff, palegoldenrod, khaki, darkkhaki, gold, brown, cornsilk, blanchedalmond, bisque, navajowhite, wheat, burlywood, tan, rosybrown, sandybrown, goldenrod, darkgoldenrod, peru, chocolate, saddlebrown, sienna, brown, maroon, green, darkolivegreen, olive, olivedrab, yellowgreen, limegreen, lime, lawngreen, chartreuse, greenyellow, springgreen, mediumspringgreen, lightgreen, palegreen, darkseagreen, mediumaquamarine, mediumseagreen, seagreen, forestgreen, green, darkgreen, cyan, aqua, cyan, lightcyan, paleturquoise, aquamarine, turquoise, mediumturquoise, darkturquoise, lightseagreen, cadetblue, darkcyan, teal, blue, lightsteelblue, powderblue, lightblue, skyblue, lightskyblue, deepskyblue, dodgerblue, cornflowerblue, steelblue, royalblue, blue, mediumblue, darkblue</p>
+      <input type='text' v-model='userStyle.backgroundColor'>
+      <div :style='userStyle'></div>
     </div>
+
+    <hr/>
+
+      <button class='codeReveal' @click="display5 = !display5">View Code for exercise 5</button>
+      <div v-if='display5'>
+        <p><i>index.html</i></p>
+        <div class='codeArea'>
+          <pre><code>
+&lt;p&gt;Enter a color: &gt;&lt;input type='text' v-model='userStyle.backgroundColor'&gt;&lt;/p&gt;
+&lt;div :style='userStyle'&gt;&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <p><i>main.js</i></p>
+        <div class='codeArea'>
+          <pre><code>
+  new Vue({
+    el: '#app',
+    data: {
+      userStyle: {
+        width: '100px',
+        height: '100px',
+        border: '1px solid #ccc',
+        margin: '10px',
+        borderRadius: '50%',
+        backgroundColor: 'lightsalmon',
+      },
+    },
+  }
+          </code></pre>
+        </div>
+
+      </div>
+
 
     <hr/>
 
     <p> 6. Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. </p>
     <div>
       <button v-on:click='startProgress'>Start Progress</button>
-      <div></div>
+      <div :class="['progress-bar']" :style='progressBar'></div>
+      <!-- <div :class="['inner-progress-bar']"></div> -->
     </div>
- -->
+
+    <hr/>
+
+      <button class='codeReveal' @click="display6 = !display6">View Code for exercise 6</button>
+      <div v-if='display6'>
+        <p><i>index.html</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            &lt;p&gt;Enter the class aquas or fushias: &gt;&lt;input type='text' v-model='boxStyling'&gt;&lt;/p&gt;
+            &lt;div :class="[{box: true}, boxStyling]"&gt;HOLA EBOLA&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <p><i>main.js</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            new Vue({
+              el: '#app',
+              data: {
+                boxStyling: '',
+                aquas: 'baquas',
+                fushias: 'fushias',
+              },
+            }
+          </code></pre>
+        </div>
+
+        <p><i>styles.css</i></p>
+        <div class='codeArea'>
+          <pre><code>
+            .box {
+              width: 100px;
+              height: 100px;
+              border: 1px solid #ccc;
+              margin: 10px;
+            }
+            .aquas {
+              color: teal;
+              background-color: aquamarine;
+              text-align: center;
+              padding-top: 20px;
+              width: 300px;
+              font-size: 100%;
+            }
+            .fushias {
+              color: pink;
+              background-color: fuchsia;
+              text-align: right;
+              padding-top: 20px;
+              padding-right: 2px;
+              border: 10px solid hotpink;
+              width: 500px;
+            }
+          </code></pre>
+        </div>
+      </div>
+
   </body>
   </div>
   <script src='main.js'></script>
