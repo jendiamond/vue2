@@ -7,8 +7,8 @@
   </head>
   <body>
     <div id='monsterslayer'>
-      <section class='row'>
 
+      <section class='row'>
 <!-- --------player---------- -->
         <div class='small-6 columns'>
           <h1 class='text-center'>YOU</h1>
@@ -20,7 +20,6 @@
             </div>
           </div>
         </div>
-
 <!-- --------monster---------- -->
         <div class='small-6 columns'>
           <h1 class='text-center'>MONSTER</h1>
@@ -32,17 +31,16 @@
             </div>
           </div>
         </div>
-
       </section>
 
 <!-- --------buttons---------- -->
-      <section class='row controls'>
+      <section class='row controls' v-if ='!gameOn'>
         <div class='small-12 columns'>
           <button id='start-game'>START NEW GAME</button>
         </div>
       </section>
 
-      <section class='row controls'>
+      <section class='row controls' v-else ='gameOn'>
         <div class='small-12 columns'>
           <button id='attack'>ATTACK</button>
           <button id='special-attack'>SPECIAL ATTACK</button>
